@@ -1,18 +1,19 @@
 import express from "express";
 
+
+
 export class Server {
-    private app = express();
+  private app = express();
 
-    async start(){
+  async start() {
+    ///* middleware
 
-        ///* middleware
+    //* Public Folder
 
-        //* Public Folder
+    this.app.use(express.static("public"));
 
-        this.app.use(express.static('public'))
-
-        this.app.listen(3000, () => {
-            console.log(`Server Running ${3000}`)
-        });
-    }
+    this.app.listen(3000, "0.0.0.0", function () {
+      console.log("Starter")
+    });
+  }
 }
