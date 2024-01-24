@@ -1,6 +1,5 @@
 import express from "express";
-
-
+import { envs } from "../config/envs";
 
 export class Server {
   private app = express();
@@ -12,7 +11,7 @@ export class Server {
 
     this.app.use(express.static("public"));
 
-    this.app.listen(3000, "0.0.0.0", function () {
+    this.app.listen(envs.PORT, "0.0.0.0", function () {
       console.log("Starter")
     });
   }
